@@ -3,7 +3,9 @@ import "../css/tree.css";
 
 const Tree = () => {
     return (
-        <h1>I'm a tree</h1>
+        <section className="tree">
+            <h1>Tree</h1>
+        </section>
     );
 }
 
