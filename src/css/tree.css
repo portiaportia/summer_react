@@ -1,0 +1,16 @@
+.tree {
+    flex:1;
+    background-color:darkseagreen;
+    padding:5px;
+    border-radius: 5px;
+    margin:10px;
+}
+
+.tree h1 {
+    font-size:24px;
+    text-align: center;
+}
+
+.tree img {
+    max-width:100%;
+}

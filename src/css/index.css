@@ -1,4 +1,6 @@
-
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 /* For larger screens */
 @media only screen and (min-width: 768px) {
