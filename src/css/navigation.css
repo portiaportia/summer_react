@@ -1,0 +1,29 @@
+#main-nav ul {
+    padding-left:0;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color:white;
+    font-size:1.5em;
+    display:block;
+    border-bottom:1px solid white;
+    padding:5px;
+}
+
+/* For larger screens */
+@media only screen and (min-width: 768px) {
+    #main-nav ul {
+        display:flex;
+    }
+
+    #main-nav a {
+        padding: 5px 10px;
+        border-bottom: 1px solid transparent;
+    }
+
+    #main-nav a:hover {
+        border-bottom:1px solid white;
+    }
+
+  }
