@@ -11,9 +11,13 @@
     padding:5px;
 }
 
+.hide-small {
+    display:none;
+}
+
 /* For larger screens */
 @media only screen and (min-width: 768px) {
-    #main-nav ul {
+    .hide-small {
         display:flex;
     }
 
@@ -24,6 +28,10 @@
 
     #main-nav a:hover {
         border-bottom:1px solid white;
+    }
+
+    #toggle-nav {
+        display:none;
     }
 
   }
