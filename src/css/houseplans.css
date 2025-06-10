@@ -1,0 +1,40 @@
+#house-plans {
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.house-plan {
+    max-width:40%;
+    background:skyblue;
+    border:2px solid navy;
+    border-radius:5px;
+    margin:auto;
+    padding:5px;
+    justify-content:space-around;
+    margin:10px 5px;
+}
+
+.house-image img {
+    max-width:100%;
+}
+
+.house-plan h1 {
+    font-size:1.5em;
+    margin:.2em;
+}
+
+.house-description p {
+    margin:.2em;
+}
+
+/* For larger screens */
+@media only screen and (min-width: 768px) {
+    .house-image {
+        width:30%;
+        margin-right:10px;
+    }
+
+    .house-description {
+        width:70%;
+    }
+  }
