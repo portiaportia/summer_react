@@ -3,6 +3,7 @@ import {useState} from "react";
 
 const SlideShow = () => {
     const[imageIndex, setImageIndex] = useState(0);
+    const imageDescriptions = ["I love boats","What a big hill","Loving the nature trails","Water and Mountains","Oh a lovely waterfall"]
 
     const importAll = (resource) => {
         return resource.keys().map(resource);
@@ -21,7 +22,6 @@ const SlideShow = () => {
         } else {
             setImageIndex(imageIndex + 1);
         }*/
-
         setImageIndex(imageIndex == images.length -1 ? 0 : imageIndex + 1);
     }
 
@@ -33,6 +33,7 @@ const SlideShow = () => {
     return (
         <section id="slideshow">
             <img src={images[imageIndex]} />
+            <p id="slide-desc">{imageDescriptions[imageIndex]}</p>
             <p><a className="arrow right" href="#" onClick = {showNextImage}>&gt;</a></p>
             <p><a className="arrow left" href="#" onClick={showPrevImage}>&lt;</a></p>
         </section>

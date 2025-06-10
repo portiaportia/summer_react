@@ -23,3 +23,10 @@
 .left {
     left:10px;
 }
+
+#slide-desc {
+    position:absolute;
+    bottom:0px;
+    background:rgba(255,255,255,0.8);
+    padding:10px;
+}
