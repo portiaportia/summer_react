@@ -14,6 +14,11 @@
     padding-bottom:50px;
 }
 
+.prune-button-container {
+    bottom:0;
+    position:absolute;
+}
+
 .tree h1 {
     font-size:24px;
     text-align: center;
@@ -27,7 +32,11 @@
     margin:auto;
 }
 
-.prune-button-container {
-    bottom:0;
-    position:absolute;
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+.pruned {
+    opacity: 0.5;
 }
