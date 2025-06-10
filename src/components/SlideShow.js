@@ -14,6 +14,8 @@ const SlideShow = () => {
     return (
         <section id="slideshow">
             <img src={images[0]} />
+            <p><a className="arrow right" href="#">&gt;</a></p>
+            <p><a className="arrow left" href="#">&lt;</a></p>
         </section>
     );
 }
