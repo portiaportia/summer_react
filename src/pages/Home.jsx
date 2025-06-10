@@ -7,8 +7,6 @@ import SlideShow from '../components/SlideShow';
 const Home = () => {
     return (
         <div id="main-area">
-            <h2>Welcome to Cherry Season</h2>
-            <p>It's time to pick</p>
 
             <SlideShow />
 
