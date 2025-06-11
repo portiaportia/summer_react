@@ -12,10 +12,11 @@ const Navigation = () => {
     return (
         <nav id="main-nav">
             <button id="toggle-nav" onClick = {toggleNav}>...</button>
-            <ul class={menuOpen ? "" : "hide-small"}>
+            <ul className={menuOpen ? "" : "hide-small"}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/houses">Houses</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
             </ul>
         </nav>
     );

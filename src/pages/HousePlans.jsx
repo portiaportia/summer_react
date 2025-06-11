@@ -21,7 +21,7 @@ const HousePlans = () => {
             <div id="house-plans" className="columns">
                 {houses.map((house)=>(
                     <HousePlan 
-                        key="1"
+                        key={house._id}
                         _id={house._id}
                         name={house.name}
                         size={house.size}
