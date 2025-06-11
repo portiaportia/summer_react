@@ -9,7 +9,7 @@ const HousePlans = () => {
     //after teh page loads do our async retrieval of the houses
     useEffect(()=>{
         const loadHouses = async() => {
-            const response = await axios.get("https://portiaportia.github.io/json/house-plans.json");
+            const response = await axios.get("http://localhost:3001/api/houses");
             setHouses(response.data);
         };
 

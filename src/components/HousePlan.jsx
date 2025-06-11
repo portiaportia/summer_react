@@ -2,7 +2,7 @@ const HousePlan = (props) => {
     return (
         <div className="house-plan columns">
             <div className="house-image">
-                <img src={"http://portiaportia.github.io/json/images/house-plans/" + props.main_image} />
+                <img src={"http://localhost:3001/images/" + props.main_image} />
             </div>
             <div className="house-description">
                 <h1>{props.name}</h1>
