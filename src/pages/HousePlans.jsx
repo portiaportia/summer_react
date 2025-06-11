@@ -10,6 +10,7 @@ const HousePlans = () => {
     useEffect(()=>{
         const loadHouses = async() => {
             const response = await axios.get("https://portiaportia.github.io/json/house-plans.json");
+            setHouses(response.data);
         };
 
         loadHouses();
@@ -20,7 +21,13 @@ const HousePlans = () => {
             <div id="house-plans" className="columns">
                 {houses.map((house)=>(
                     <HousePlan 
-                        kye="1"/>
+                        key="1"
+                        _id={house._id}
+                        name={house.name}
+                        size={house.size}
+                        bedrooms={house.bedrooms}
+                        bathrooms = {house.bathrooms}
+                        main_image = {house.main_image}/>
                 ))}
             </div>
         </>
