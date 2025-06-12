@@ -2,6 +2,7 @@ import '../css/houseplans.css';
 import HousePlan from "../components/HousePlan";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import AddHousePlan from '../components/AddHousePlan';
 
 const HousePlans = () => {
     const [houses, setHouses] = useState([]);
@@ -16,8 +17,14 @@ const HousePlans = () => {
         loadHouses();
     },[]);
 
+    const updateHousePlans = (housePlan) => {
+        setHouses((houses)=>[...houses, housePlan]);
+    };
+
+
     return (
         <>
+            <AddHousePlan updateHousePlans={updateHousePlans} />
             <div id="house-plans" className="columns">
                 {houses.map((house)=>(
                     <HousePlan 

@@ -1,0 +1,15 @@
+#add-house-plan {
+    position:relative;
+}
+
+#add-link {
+    text-decoration: none;
+    padding:10px;
+    background:darkslategray;
+    color:white;
+    position:absolute;
+    display:block;
+    right:0;
+    top:5px;
+    border-radius:5px;
+}
