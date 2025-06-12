@@ -21,6 +21,26 @@ const AddHousePlan = (props) => {
         setShowAddDialog(false);
     }
 
+    const addHouse = async(event) => {
+        event.preventDefault();
+        
+        setResult("... Sending");
+
+        const formData = new FormData(event.target);
+        //console.log(...formData);
+
+        const response = await fetch("http://localhost:3001/api/houses",{
+            "method":"POST",
+            "body":formData
+            });
+
+        if(response.status ==200){
+            setResult("House Added");
+        } else {
+            setResult("Error adding house");
+        }
+    }
+
     return (
         <div id="add-house-plan">
             <a id="add-link" onClick={openAddDialog} href="#">+</a>
@@ -30,7 +50,7 @@ const AddHousePlan = (props) => {
                     <div className="w3-modal-content">
                         <div className="w3-container">
                             <span id="dialog-close" onClick={closeAddDialog} className="w3-button w3-display-topright">&times;</span>
-                            <form id="add-property-form" >
+                            <form id="add-property-form" onSubmit={addHouse} >
                                 <h3>Create New Property</h3>
 
                                 <p>
