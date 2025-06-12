@@ -5,21 +5,31 @@ import {useState} from "react";
 const AddHousePlan = (props) => {
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
-
+    const [showAddDialog, setShowAddDialog] = useState(false);
 
 
     const uploadImage = (event) => {
         setPrevSrc(URL.createObjectURL(event.target.files[0]));
     };
 
+    const openAddDialog = (event) => {
+        event.preventDefault();
+        setShowAddDialog(true);
+    }
+
+    const closeAddDialog = () => {
+        setShowAddDialog(false);
+    }
+
     return (
         <div id="add-house-plan">
-            <a id="add-link" href="#">+</a>
+            <a id="add-link" onClick={openAddDialog} href="#">+</a>
 
+            {showAddDialog?(
                 <div id="add-dialog" className="w3-modal dialog">
                     <div className="w3-modal-content">
                         <div className="w3-container">
-                            <span id="dialog-close" className="w3-button w3-display-topright">&times;</span>
+                            <span id="dialog-close" onClick={closeAddDialog} className="w3-button w3-display-topright">&times;</span>
                             <form id="add-property-form" >
                                 <h3>Create New Property</h3>
 
@@ -66,6 +76,7 @@ const AddHousePlan = (props) => {
                         </div>
                     </div>
                 </div>
+                ) : ("")}
         </div>
     );
 }
