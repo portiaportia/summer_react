@@ -3,55 +3,24 @@ import "../css/addhouseplan.css";
 import {useState} from "react";
 
 const AddHousePlan = (props) => {
-    const [showAddDialog, setShowAddDialog] = useState(false);
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
 
-    const openAddDialog = () => {
-        setShowAddDialog(true);
-    }
 
-    const closeAddDialog = () => {
-        console.log("I'm in the close method")
-        setShowAddDialog(false);
-    }
 
     const uploadImage = (event) => {
         setPrevSrc(URL.createObjectURL(event.target.files[0]));
     };
 
-    const addToServer = async(event) => {
-        event.preventDefault(); //stops us from going to another page or refreshing
-        setResult("Sending...");
-
-        const formData = new FormData(event.target);
-        console.log(...formData);
-        
-        const response = await fetch("http://localhost:3001/api/houses", {
-            "method":"POST",
-            "body":formData
-        });
-
-        if(response.status == 200){
-            setResult("House plan added successfully");
-            event.target.reset();
-            closeAddDialog();
-            props.updateHousePlans(await response.json());
-        } else {
-            setResult("Error adding house");
-        }
-    };
-
     return (
         <div id="add-house-plan">
-            <a id="add-link" onClick={openAddDialog} href="#">+</a>
+            <a id="add-link" href="#">+</a>
 
-            {showAddDialog?(
                 <div id="add-dialog" className="w3-modal dialog">
                     <div className="w3-modal-content">
                         <div className="w3-container">
-                            <span id="dialog-close" className="w3-button w3-display-topright" onClick={closeAddDialog}>&times;</span>
-                            <form id="add-property-form" onSubmit={addToServer}>
+                            <span id="dialog-close" className="w3-button w3-display-topright">&times;</span>
+                            <form id="add-property-form" >
                                 <h3>Create New Property</h3>
 
                                 <p>
@@ -96,7 +65,7 @@ const AddHousePlan = (props) => {
                             </form>
                         </div>
                     </div>
-                </div>):("")}
+                </div>
         </div>
     );
 }

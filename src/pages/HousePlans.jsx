@@ -24,7 +24,6 @@ const HousePlans = () => {
 
     return (
         <>
-            <AddHousePlan updateHousePlans={updateHousePlans} />
             <div id="house-plans" className="columns">
                 {houses.map((house)=>(
                     <HousePlan 
