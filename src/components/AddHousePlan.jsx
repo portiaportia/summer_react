@@ -36,6 +36,10 @@ const AddHousePlan = (props) => {
 
         if(response.status ==200){
             setResult("House Added");
+            event.target.reset();
+            setPrevSrc("");
+            closeAddDialog();
+            props.updateHousePlans(await response.json());
         } else {
             setResult("Error adding house");
         }
