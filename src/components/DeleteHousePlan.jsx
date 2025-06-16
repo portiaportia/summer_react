@@ -5,7 +5,18 @@ const DeleteHousePlan = (props) => {
   const [result, setResult] = useState("");
 
   const deleteHousePlan = async() => {
-    
+    const response = await fetch(`http://localhost:3001/api/houses/${props._id}`, {
+      method:"DELETE"
+    });
+
+    if(response.status === 200) {
+      setResult("House successfully delete");
+      props.closeDeleteDialog();
+      props.hideHousePlan();
+    } else {
+      setResult("Sorry, we couldn't delete the house");
+    }
+
   };
 
   return (

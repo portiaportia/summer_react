@@ -10,7 +10,25 @@ const EditHousePlan = (props) => {
 };
 
   const onSubmit = async(event) => {
+    event.preventDefault();
+    setResult("... sending");
 
+    const formData = new FormData(event.target);
+    console.log(...formData);
+
+    const response = await fetch(`http://localhost:3001/api/houses/${props._id}`,{
+      method:"PUT",
+      body:formData
+    });
+
+    if(response.status === 200) {
+      setResult("House updated successfully");
+      event.target.reset();
+      props.closeEditDialog();
+      props.editHousePlan(await response.json());
+    } else {
+      setResult("Error edditing house");
+    }
   };
 
   return (
