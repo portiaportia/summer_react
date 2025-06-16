@@ -4,7 +4,6 @@
 }
 
 .house-plan {
-    max-width:40%;
     background:skyblue;
     border:2px solid navy;
     border-radius:5px;
@@ -25,6 +24,26 @@
 
 .house-description p {
     margin:.2em;
+}
+
+#house-plan-link {
+    text-decoration:none;
+    display:block;
+    width:30%;
+    margin:0;
+}
+
+#display-info img {
+    margin-right:10px;
+}
+
+#edit-links {
+    font-size:2em;
+}
+
+#edit-links a {
+    text-decoration: none;
+    padding:5px;
 }
 
 /* For larger screens */
